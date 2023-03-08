@@ -2,21 +2,20 @@
 //declare variables in global scope
 var map;
 var dataStats = {};
-
-//Switch to decide if UW-Madison should be drawn as transparent or not
-//var hideMadison = false;
+// Switch to decide if Madison should be drawn as transparent or not
+var hideMadison = false;
 
 //Create the Leaflet map
 function createMap(){
     //create the map
     map = L.map('map', {
-        center: [44.5, -89.5],
-        zoom: 6
+        center: [44.55, -89.5],
+        zoom: 6.5
     });
     
     // Add Stamen tile layer
     L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &mdash; Data Source: <a href="https://www.wisconsin.edu/education-reports-statistics/enrollments/">UW System Education Reports and Statistics</a> &mdash; Lisa Siewert &mdash; 2023',
         subdomains: 'abcd',
         minZoom: 6,
         maxZoom: 9,
@@ -75,7 +74,7 @@ function PopupContent (properties, attribute){
     this.attribute = attribute;
     this.year = attribute.split("F")[1];
     this.enrollment = this.properties[attribute];
-    this.formatted = "<p><b>Campus:</b> " + this.properties.Campus + "</p><p><b>FTE Enrollment in " + this.year + ":</b> " + this.enrollment + "</p>";
+    this.formatted = "<p><b>Campus:</b> " + this.properties.Campus + "</p><p><b>FTE Enrollment in " + this.year + ":</b> " + this.enrollment.toLocaleString("en-US") + "</p>";
 };
 
 //function to convert markers to circle markers and add popups
@@ -129,7 +128,7 @@ function getCircleValues(attribute) {
     max = -Infinity;
 
     map.eachLayer(function (layer) {
-    //get the attribute value
+   // get the attribute value
     if (layer.feature) {
       var attributeValue = Number(layer.feature.properties[attribute]);
 
@@ -145,8 +144,8 @@ function getCircleValues(attribute) {
     }
   });
 
-  //set mean
-  var mean = (max + min) / 2;
+  //set mean and remove decimals
+  var mean = Math.trunc((max + min) / 2);
 
   //return values as an object
   return {
@@ -170,10 +169,10 @@ function updateLegend(attribute) {
     //get the radius
     var radius = calcPropRadius(circleValues[key]);
 
-    document.querySelector("#" + key).setAttribute("cy", 59 - radius);
+    document.querySelector("#" + key).setAttribute("cy", 230 - radius);
     document.querySelector("#" + key).setAttribute("r", radius)
-
-    document.querySelector("#" + key + "-text").textContent = Math.round(circleValues[key] * 100) / 100;
+//format text with commas
+    document.querySelector("#" + key + "-text").textContent = (Math.round(circleValues[key] * 100) / 100).toLocaleString("en-US");
   }
 };
 
@@ -197,6 +196,12 @@ function updatePropSymbols(attribute){
            //update popup with new content
            popup = layer.getPopup();
            popup.setContent(popupContent.formatted).update();
+            
+            // Hide Madison if box checked
+            if (hideMadison && layer.feature.properties.Campus == "UW-Madison") {
+                layer.setStyle(noFill);
+                console.log('noFill');
+            }
 
         };
     });
@@ -220,9 +225,9 @@ function createSequenceControls(attributes){
             //create range input element (slider)
             container.insertAdjacentHTML('beforeend', '<input class="range-slider" type="range">')
 
-            //add skip buttons
-            container.insertAdjacentHTML('beforeend', '<button class="step" id="reverse" title="Reverse"><img src="img/reverse.png"></button>'); 
-            container.insertAdjacentHTML('beforeend', '<button class="step" id="forward" title="Forward"><img src="img/forward.png"></button>'); 
+            //add skip buttons...these look bad, so leaving them off for now
+          //container.insertAdjacentHTML('beforeend', '<button class="step" id="reverse" title="Reverse"><img src="img/reverse.png"></button>'); 
+          //container.insertAdjacentHTML('beforeend', '<button class="step" id="forward" title="Forward"><img src="img/forward.png"></button>'); 
 
             //disable any mouse event listeners for the container
             L.DomEvent.disableClickPropagation(container);
@@ -238,6 +243,7 @@ function createSequenceControls(attributes){
     document.querySelector(".range-slider").min = 0;
     document.querySelector(".range-slider").value = 0;
     document.querySelector(".range-slider").step = 1;
+    document.querySelector('#slider-value');
    
     var steps = document.querySelectorAll('.step');
     
@@ -271,23 +277,66 @@ function createSequenceControls(attributes){
         //pass new attribute to update symbols
         updatePropSymbols(attributes[index]);
     })
+    
 };
+
+//control to hide Madison...not working...why?...made a div element in the index file, but I didn't figure out how to iuse that in this function.  I'm clearly not understanding how to link html, css, and js together.  Lots of practice is the solution.
+function madisonSwitch(attribute){
+    var hideMadisonControl = L.Control.extend({
+    options: {
+       position: 'topright'//puts it in the top right of the map
+    },
+    
+    onAdd: function() {
+        //creates a container for the checkbox control
+        var container = L.DomUtil.create('div', 'hide-madison-container');
+        
+        //create checkbox element
+        container.insertAdjacentHTML('<input type="checkbox" id="hide-madison-check" name="hide-madison-check" value="hideMadison">');
+        
+        //create label for checkbox
+        container.insertAdjacentHTML('<label for="hide-madison-check">Hide Madison</label>');
+        //the container isn't returning, so I don't have this set up right
+       return container
+       }
+});
+
+    map.addControl(new hideMadisonControl());
+}
+
+//control to filter campuses...i spoke a big game, but failed to figure out this control in time.  I still want to do this though.  I think my colleagues would like playing around with this map.
+//function filterCampuses (attributes){
+   // var radioButtons = L.Control.extend({
+    //options: {
+       // position: 'bottomleft'
+    //},
+    
+    //onAdd: function() {
+       // var container = L.DomUtil.create("div", "filter-container");
+        
+        //create radiobuttons
+       //container.insertAdjacentHTML('beforeend',  '<input class="btn-radio" type="radio" value="ALL" name="CampusType"') />All;
+       // container.insertAdjacentHTML('beforeend',  '<input class="btn-radio" type="radio" value="Four-Year" name="CampusType"') />4-Year-Campuses;
+        //container.insertAdjacentHTML('beforeend',  '<input class="btn-radio" type="radio" value="Two-Year" name="CampusType"') />2-Year-Campuses; 
+   // }
+       // });
+
 
 //create legend based on attributes shown for that year
 function createLegend(attributes) {
   var LegendControl = L.Control.extend({
     options: {
-      position: "topright",
+      position: "bottomright",
     },
 
     onAdd: function () {
       // create the control container with a particular class name
       var container = L.DomUtil.create("div", "legend-control-container");
 
-      container.innerHTML = '<p class="temporalLegend"><h2>Enrollment in <span class="year">1973</span></h2></p>';
+      container.innerHTML = '<p class="temporalLegend"><h1><b>UW System FTE Enrollment in  <span class="year">1973</span><b></h1></p><p><small>The numbers below are maximum, mean, and minimum FTE enrollments by year.</small></p>';
 
       //start attribute legend svg string
-      var svg = '<svg id="attribute-legend" width="400px" height="400px">';
+      var svg = '<svg id="attribute-legend" width="250px" height="250px">';
 
       //array of circle names to base loop on
       var circles = ["max", "mean", "min"];
@@ -296,8 +345,7 @@ function createLegend(attributes) {
       for (var i = 0; i < circles.length; i++) {
         //calculate r and cy
         var radius = calcPropRadius(dataStats[circles[i]]);
-        console.log(radius);
-        var cy = 220 - radius;
+          var cy = 230 - radius;
         console.log(cy);
 
         //circle string
@@ -308,19 +356,19 @@ function createLegend(attributes) {
           radius +
           '"cy="' +
           cy +
-          '" fill="#990033" fill-opacity="0.8" stroke="#000000" cx="200"/>';
-
+          '" fill="#990033" fill-opacity="0.3" stroke="#d3d3d3" cx="125"/>';
+          
         //evenly space out labels
-        var textY = i * 40 + 40;
+        var textY = i * 90 + 40;
 
         //text string
         svg +=
-          '<text id="' +
-          circles[i] +
-          '-text" x="200" y="' +
+          '<text id="' + 
+          circles[i].toLocaleString("en-US") +
+          '-text" x="130" y="' +
           textY +
           '">' +
-          Math.round(dataStats[circles[i]] * 100) / 100
+          (Math.round(dataStats[circles[i]] * 100) / 100)
           +
             "</text>";
       }
@@ -359,25 +407,6 @@ function processData(data){
     return attributes;
 };
 
-//function to filter campuses...https://leafletjs.com/reference.html#geojson-filter
-//function filter (attributes){
-    
-//}
-
-//function to hide Madison
-//var HideMadisonControl = L.Control.extend({
-    //options: {
-       // position: 'topright'
-   // },
-    
-    //onAdd: function(map) {
-       // var container = L.DomUtil.create('div', 'hide-madison');
-       //container.append('<input type="checkbox" id="hide-madison-check" name="hide-madison-check" value="hideMadison">');
-      //container.append('<label for="hide-madison-check">Hide Madison</label>');
-        
-     //   return container
-   // }
-//})
 
 //Import GeoJSON data
 function getData(){
@@ -397,6 +426,9 @@ function getData(){
         createSequenceControls(attributes);
         //call function to create legend
         createLegend(attributes);
+        //call function to hide Madison
+        madisonSwitch(attributes);
+        
     })
  };
 

@@ -1,0 +1,655 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Madison",
+	"CampusType": "Four-Year",
+        "F1973": 33179,
+        "F1978": 35132,
+        "F1983": 37971,
+        "F1988": 37704,
+        "F1993": 35282,
+        "F1998": 35173,
+        "F2003": 37051,
+        "F2008": 37263,
+        "F2013": 38498,
+        "F2018": 39888,
+        "F2022": 44966
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.395609,
+          43.081309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Milwaukee Main Campus",
+	"CampusType": "Four-Year",
+        "F1973": 18831,
+        "F1978": 17542,
+        "F1983": 18941,
+        "F1988": 17606,
+        "F1993": 16584,
+        "F1998": 16546,
+        "F2003": 20398,
+        "F2008": 23746,
+        "F2013": 23095,
+        "F2018": 20993,
+        "F2022": 18253
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.948334,
+          43.063146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Eau Claire Main Campus",
+	"CampusType": "Four-Year",
+        "F1973": 8452,
+        "F1978": 9868,
+        "F1983": 10399,
+        "F1988": 10106,
+        "F1993": 9241,
+        "F1998": 9660,
+        "F2003": 9605,
+        "F2008": 10016,
+        "F2013": 9895,
+        "F2018": 9844,
+        "F2022": 8643
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.501773,
+          44.820639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Green Bay Main Campus",
+	"CampusType": "Four-Year",
+        "F1973": 3101,
+        "F1978": 2629,
+        "F1983": 3488,
+        "F1988": 4042,
+        "F1993": 4343,
+        "F1998": 4573,
+        "F2003": 4810,
+        "F2008": 5113,
+        "F2013": 5051,
+        "F2018": 5135,
+        "F2022": 5581
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.954553,
+          44.517447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-LaCrosse",
+	"CampusType": "Four-Year",
+        "F1973": 6545,
+        "F1978": 7962,
+        "F1983": 8437,
+        "F1988": 8862,
+        "F1993": 8066,
+        "F1998": 8723,
+        "F2003": 8689,
+        "F2008": 9256,
+        "F2013": 9868,
+        "F2018": 9872,
+        "F2022": 9433
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.240304,
+          43.807519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Oshkosh Main Campus",
+	"CampusType": "Four-Year",
+        "F1973": 9190,
+        "F1978": 8517,
+        "F1983": 9560,
+        "F1988": 9671,
+        "F1993": 9350,
+        "F1998": 9387,
+        "F2003": 10054,
+        "F2008": 10178,
+        "F2013": 10829,
+        "F2018": 10102,
+        "F2022": 8346
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.557551,
+          44.020221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Parkside",
+	"CampusType": "Four-Year",
+        "F1973": 3519,
+        "F1978": 3385,
+        "F1983": 4142,
+        "F1988": 3666,
+        "F1993": 3680,
+        "F1998": 3458,
+        "F2003": 3957,
+        "F2008": 4089,
+        "F2013": 3695,
+        "F2018": 3642,
+        "F2022": 3027
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.841871,
+          42.584327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Platteville Main Campus",
+	"CampusType": "Four-Year",
+        "F1973": 3876,
+        "F1978": 4529,
+        "F1983": 5368,
+        "F1988": 5041,
+        "F1993": 4688,
+        "F1998": 4736,
+        "F2003": 5388,
+        "F2008": 6523,
+        "F2013": 7764,
+        "F2018": 7128,
+        "F2022": 5609
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.470909,
+          42.736625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-River Falls",
+	"CampusType": "Four-Year",
+        "F1973": 3743,
+        "F1978": 4821,
+        "F1983": 5200,
+        "F1988": 5031,
+        "F1993": 4741,
+        "F1998": 5226,
+        "F2003": 5348,
+        "F2008": 5942,
+        "F2013": 5503,
+        "F2018": 5564,
+        "F2022": 4459
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.622396,
+          44.8531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Stevens Point Main Campus",
+	"CampusType": "Four-Year",
+        "F1973": 7396,
+        "F1978": 8002,
+        "F1983": 7979,
+        "F1988": 8604,
+        "F1993": 7947,
+        "F1998": 7821,
+        "F2003": 8008,
+        "F2008": 8316,
+        "F2013": 8806,
+        "F2018": 6956,
+        "F2022": 6641
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.573683,
+          44.51956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Stout",
+	"CampusType": "Four-Year",
+        "F1973": 5396,
+        "F1978": 6806,
+        "F1983": 7459,
+        "F1988": 7356,
+        "F1993": 6754,
+        "F1998": 6941,
+        "F2003": 7076,
+        "F2008": 7518,
+        "F2013": 7591,
+        "F2018": 7057,
+        "F2022": 5850
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.912448,
+          44.889048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Superior",
+	"CampusType": "Four-Year",
+        "F1973": 2616,
+        "F1978": 1939,
+        "F1983": 1874,
+        "F1988": 1999,
+        "F1993": 2127,
+        "F1998": 2163,
+        "F2003": 2320,
+        "F2008": 2191,
+        "F2013": 2202,
+        "F2018": 2107,
+        "F2022": 2036
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.101588,
+          46.705622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Whitewater Main Campus",
+	"CampusType": "Four-Year",
+        "F1973": 7068,
+        "F1978": 7910,
+        "F1983": 9171,
+        "F1988": 9461,
+        "F1993": 9024,
+        "F1998": 9260,
+        "F2003": 9514,
+        "F2008": 9791,
+        "F2013": 10737,
+        "F2018": 10587,
+        "F2022": 8906
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.737054,
+          42.835761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Milwaukee at Washington",
+	"CampusType": "Two-Year",
+        "F1973": 412,
+        "F1978": 351,
+        "F1983": 594,
+        "F1988": 622,
+        "F1993": 551,
+        "F1998": 578,
+        "F2003": 738,
+        "F2008": 758,
+        "F2013": 766,
+        "F2018": 559,
+        "F2022": 260
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.183781,
+          43.420674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Milwaukee at Waukesha",
+	"CampusType": "Two-Year",
+        "F1973": 1186,
+        "F1978": 1213,
+        "F1983": 1538,
+        "F1988": 1682,
+        "F1993": 1425,
+        "F1998": 1250,
+        "F2003": 1638,
+        "F2008": 1557,
+        "F2013": 1571,
+        "F2018": 1238,
+        "F2022": 563
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.244537,
+          43.02433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Eau Claire-Barron",
+	"CampusType": "Two-Year",
+        "F1973": 455,
+        "F1978": 377,
+        "F1983": 326,
+        "F1988": 343,
+        "F1993": 461,
+        "F1998": 350,
+        "F2003": 452,
+        "F2008": 415,
+        "F2013": 415,
+        "F2018": 366,
+        "F2022": 290
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.740829,
+          45.503769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Green Bay, Manitowoc",
+	"CampusType": "Two-Year",
+        "F1973": 239,
+        "F1978": 318,
+        "F1983": 408,
+        "F1988": 397,
+        "F1993": 403,
+        "F1998": 398,
+        "F2003": 530,
+        "F2008": 458,
+        "F2013": 430,
+        "F2018": 247,
+        "F2022": 294
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.676241,
+          44.095157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Green Bay, Marinette",
+	"CampusType": "Two-Year",
+        "F1973": 262,
+        "F1978": 303,
+        "F1983": 310,
+        "F1988": 328,
+        "F1993": 355,
+        "F1998": 391,
+        "F2003": 381,
+        "F2008": 322,
+        "F2013": 335,
+        "F2018": 211,
+        "F2022": 170
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.623789,
+          45.085883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Green Bay, Sheboygan",
+	"CampusType": "Two-Year",
+        "F1973": 486,
+        "F1978": 462,
+        "F1983": 497,
+        "F1988": 452,
+        "F1993": 457,
+        "F1998": 491,
+        "F2003": 574,
+        "F2008": 548,
+        "F2013": 540,
+        "F2018": 396,
+        "F2022": 337
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.723689,
+          43.756279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Oshkosh Fond du Lac",
+	"CampusType": "Two-Year",
+        "F1973": 542,
+        "F1978": 413,
+        "F1983": 535,
+        "F1988": 581,
+        "F1993": 605,
+        "F1998": 371,
+        "F2003": 552,
+        "F2008": 598,
+        "F2013": 556,
+        "F2018": 440,
+        "F2022": 199
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.448892,
+          43.781487
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Oshkosh Fox Cities",
+	"CampusType": "Two-Year",
+        "F1973": 368,
+        "F1978": 563,
+        "F1983": 783,
+        "F1988": 896,
+        "F1993": 881,
+        "F1998": 918,
+        "F2003": 1279,
+        "F2008": 1260,
+        "F2013": 1341,
+        "F2018": 1115,
+        "F2022": 497
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.436074,
+          44.204503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Platteville Baraboo",
+	"CampusType": "Two-Year",
+        "F1973": 212,
+        "F1978": 331,
+        "F1983": 368,
+        "F1988": 399,
+        "F1993": 450,
+        "F1998": 403,
+        "F2003": 478,
+        "F2008": 495,
+        "F2013": 445,
+        "F2018": 351,
+        "F2022": 144
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.741187,
+          43.468156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Platteville Richland",
+	"CampusType": "Two-Year",
+        "F1973": 236,
+        "F1978": 240,
+        "F1983": 244,
+        "F1988": 348,
+        "F1993": 356,
+        "F1998": 339,
+        "F2003": 414,
+        "F2008": 405,
+        "F2013": 402,
+        "F2018": 224,
+        "F2022": 51
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.386156,
+          43.3389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Stevens Point at Marshfield",
+	"CampusType": "Two-Year",
+        "F1973": 368,
+        "F1978": 323,
+        "F1983": 438,
+        "F1988": 416,
+        "F1993": 414,
+        "F1998": 399,
+        "F2003": 474,
+        "F2008": 463,
+        "F2013": 450,
+        "F2018": 291,
+        "F2022": 161
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.177021,
+          44.663234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Stevens Point at Wausau",
+	"CampusType": "Two-Year",
+        "F1973": 628,
+        "F1978": 734,
+        "F1983": 995,
+        "F1988": 958,
+        "F1993": 868,
+        "F1998": 821,
+        "F2003": 1008,
+        "F2008": 1061,
+        "F2013": 968,
+        "F2018": 528,
+        "F2022": 295
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.639884,
+          44.963482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Campus": "UW-Whitewater at Rock",
+	"CampusType": "Two-Year",
+        "F1973": 373,
+        "F1978": 358,
+        "F1983": 650,
+        "F1988": 651,
+        "F1993": 585,
+        "F1998": 522,
+        "F2003": 634,
+        "F2008": 795,
+        "F2013": 893,
+        "F2018": 711,
+        "F2022": 465
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.026197,
+          42.678658
+        ]
+      }
+    }
+  ]
+}

@@ -352,7 +352,7 @@ function getData(){
         //call function to create sequence controls
         createSequenceControls(attributes);
         //call function to create legend
-        createLegend(attributes)
+        createLegend(attributes);
     })
 };
        
