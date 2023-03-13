@@ -84,11 +84,11 @@ function pointToLayer(feature, latlng, attributes){
 
     //create marker options
     var options = {
-                fillColor: "#990033",
-                color: "#691C32",
-                weight: 0.5,
-                opacity: 1,
-      };
+      fillColor: "#990033",
+      color: "#691C32",
+      weight: 0.5,
+      opacity: 1
+    };
     
     //For each feature, determine its value for the selected attribute
     var attValue = Number(feature.properties[attribute]);
@@ -117,9 +117,16 @@ function createPropSymbols(data, attributes){
     L.geoJson(data, {
         pointToLayer: function(feature, latlng){
             return pointToLayer(feature, latlng, attributes);
-        }
+        },
+        filter: madisonFilter
     }).addTo(map);
 };
+
+function madisonFilter(feature){
+  if (feature.properties.Campus !== "UW-Madison") {
+    return true;
+  }
+}
 
 //function to get circle enrollment values
 function getCircleValues(attribute) {
@@ -292,6 +299,7 @@ function madisonSwitch(attribute){
         var container = L.DomUtil.create('div', 'hide-madison-container');
         
         //create checkbox element
+        // you cannot create checkboxes using the insertAdjacentHTML method; instead consider an approach like this: https://stackoverflow.com/questions/17758773/trouble-adding-checkboxes-to-html-div-using-js
         container.insertAdjacentHTML('<input type="checkbox" id="hide-madison-check" name="hide-madison-check" value="hideMadison">');
         
         //create label for checkbox
@@ -303,6 +311,9 @@ function madisonSwitch(attribute){
 
     map.addControl(new hideMadisonControl());
 }
+
+// see this example for using leaflet wrappers for layer groups/controls: https://leafletjs.com/examples/layers-control/
+// and this example for establishing layers based on geojson attributes: https://stackoverflow.com/questions/16148598/leaflet-update-geojson-filter
 
 //control to filter campuses...i spoke a big game, but failed to figure out this control in time.  I still want to do this though.  I think my colleagues would like playing around with this map.
 //function filterCampuses (attributes){
